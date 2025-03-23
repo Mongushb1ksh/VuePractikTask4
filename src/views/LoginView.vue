@@ -1,9 +1,9 @@
 <template>
     <div class="login">
         <h1>Страница входа</h1>
-        <form @submit.prevent="hadleSubmit">
-            <input v-model="username" type="text" placeholder="User name" />
-            <input v-model="password" type="password" placeholder="Password" />
+        <form @submit.prevent="handleSubmit">
+            <input v-model="username" type="text" placeholder="Логин" />
+            <input v-model="password" type="password" placeholder="Пароль" />
             <button type="submit">Войти</button>
             <p v-if="error" class="error">{{ error }}</p>
         </form>
