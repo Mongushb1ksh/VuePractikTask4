@@ -1,7 +1,7 @@
 <template>
     <div class="login">
-        <h1>Страница входа</h1>
         <form @submit.prevent="handleSubmit">
+            <h2>Вход</h2>
             <input v-model="username" type="text" placeholder="Логин" />
             <input v-model="password" type="password" placeholder="Пароль" />
             <button type="submit">Войти</button>
@@ -39,3 +39,6 @@ export default{
     },
  };
 </script>
+<style>
+
+</style>

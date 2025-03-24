@@ -1,7 +1,7 @@
 <template>
     <div class="register">
-        <h1>Страница регистрации</h1>
         <form @submit.prevent="handleSubmit">
+            <h2>Регистрация</h2>
             <input v-model="username" type="text" placeholder="Логин" />
             <input v-model="email" type="email" placeholder="Email">
             <input v-model="password" type="password" placeholder="Пароль" />
