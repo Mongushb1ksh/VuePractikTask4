@@ -22,7 +22,7 @@ import api from '@/utils/api';
 
         async mounted(){
             const response = await api.getProducts();
-            this.products = responce.data;
+            this.products = response.data;
         },
 
         methods: {
@@ -32,6 +32,15 @@ import api from '@/utils/api';
                     alert('Товар добавлен в корзину!');
                 } catch (error){
                     alert('Ошибка добавления товара');
+                }
+            },
+
+            async fetchProducts() {
+                try {
+                    const products = await api.getProducts();
+                    this.products = products;
+                } catch (error) {
+                    console.error('Ошибка загрузки товаров:', error);
                 }
             },
         },

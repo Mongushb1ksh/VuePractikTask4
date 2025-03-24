@@ -1,14 +1,28 @@
 <template>
   <nav>
     <router-link to="/">Каталог</router-link> 
-    <router-link to="/login">Вход</router-link>
-    <router-link to="/register">Регистрация</router-link> 
+    <router-link v-if="isAuthenticated" to="/cart">Корзина</router-link> 
+    <router-link v-if="!isAuthenticated" to="/login">Вход</router-link>
+    <router-link v-if="!isAuthenticated" to="/register">Регистрация</router-link> 
+    <button v-if="isAuthenticated" @click="logout">Выйти</button>
   </nav>
   <router-view></router-view>
 </template>
 
 <script>
-
+export default{
+  computed: {
+    isAuthenticated(){
+      return this.$store.getters['auth/isAuthenticated'];
+    },
+  },
+  methods:{
+    async logout(){
+        await this.$store.dispatch('auth/logout');
+        this.$router.push('/');
+    },
+  },
+}
 </script>
 
 <style>
