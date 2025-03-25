@@ -11,6 +11,9 @@
 
 <script>
 export default{
+
+  
+
   computed: {
     isAuthenticated(){
       return this.$store.getters['auth/isAuthenticated'];
@@ -35,7 +38,9 @@ export default{
 nav {
   display: flex;
   align-items: center;
-  gap: 10%;
+  flex-wrap: wrap;
+  border-bottom: 1px solid black;
+  gap: 5%;
   background-color: #ebebeb;
   padding: 10px 20px;
 }
@@ -66,6 +71,12 @@ button {
   background-color: #efefef;
   padding: 10px 15px;
   border-radius: 5px;
+}
+
+
+a{
+  text-decoration: none;
+  color: #000000;
 }
 
 </style>
